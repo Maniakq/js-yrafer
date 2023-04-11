@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Custom Search</title>
+</head>
+<body>
+    <!-- Container for the search element -->
+    <div id="searchContainer"></div>
+
+    <script>
+        function addGoogleCustomSearch(cx) {
+            // Create the script element
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://cse.google.com/cse.js?cx=${cx}`;
+            document.head.appendChild(script);
+
+            // Create the search div element
+            const searchDiv = document.createElement('div');
+            searchDiv.className = "gcse-search";
+            const searchContainer = document.getElementById('searchContainer');
+            searchContainer.appendChild(searchDiv);
+        }
+
+        // Call the function to add the Google Custom Search elements to the page
+        // Replace 'YOUR_CX_VALUE' with your own Google Custom Search Engine ID
+        addGoogleCustomSearch('https://cse.google.com/cse?cx=11e54fe9a005f44c6');
+    </script>
+</body>
+</html>
